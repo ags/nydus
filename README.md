@@ -1,11 +1,11 @@
 nydus
 -----
 
-A tool for managing SSH tunnels.
+A tool for opening pre-configured SSH tunnels.
 
 ## Usage
 
-Given the file `tunnels.yml`:
+Given the file `~/.nydus.yml`:
 
 ```
 elasticsearch:
@@ -19,4 +19,6 @@ elasticsearch:
 ```shell
 $ nydus list
 [elasticsearch] 9200:a.private.server.com:9200 me@a.public.bastion.com
+$ nydus open elasticsearch
+ssh -N -L 9200:a.private.server.com:9200 me@a.public.bastion.com
 ```
